@@ -1,8 +1,8 @@
 function ListGroup() {
     //render the list dynamicly
     const items =["New york","Tokyo","London","Paris","Texas"];
-    items [];
-
+   
+   // items [];
     //const message =items.length === 0 ? <p>no items found</p> : null;
     /*const getMessage = () => {
        return items.length === 0 ? <p>no items found</p> : null
@@ -35,7 +35,7 @@ function ListGroup() {
     {items.length === 0 && <p>no items found</p> }
     <ul className="list-group">
        {items.map((item) => (
-        <li key={item}>{item}</li>
+        <li className="list-group-item" key={item} onClick={() => console.log("clicked")}>{item}</li>
         ))}
 
     </ul>
