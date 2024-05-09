@@ -3,9 +3,16 @@
 //hook eg useState & useEffect
 import { useState } from "react";
 
-function ListGroup() {
+//{items :[array], heading: string} to make props
+interface Props{
+  items: string[];
+  heading: string; 
+}
+
+
+
+function ListGroup( {items, heading}:Props ) {
     //render the list dynamicly
-    let items =["New york","Tokyo","London","Paris","Texas"];
     const [selectedIndex, setSelectedIndex] = useState(-1);
    
    // items [];
@@ -37,7 +44,7 @@ function ListGroup() {
     
     */
     <>
-    <h1>List</h1>
+    <h1>{heading}</h1>
     {items.length === 0 && <p>no items found</p> }
     <ul className="list-group ">
        {items.map((item, index) => (
