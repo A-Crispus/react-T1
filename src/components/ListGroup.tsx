@@ -1,7 +1,10 @@
+// import mouseevent
+import { MouseEvent } from "react";
+
 function ListGroup() {
     //render the list dynamicly
     const items =["New york","Tokyo","London","Paris","Texas"];
-   
+    let selectedIndex = 0;
    // items [];
     //const message =items.length === 0 ? <p>no items found</p> : null;
     /*const getMessage = () => {
@@ -11,8 +14,8 @@ function ListGroup() {
     {items.length === 0 && <p>no items found</p>}
     */
 
-
-
+//Event handler
+   const handleClick = ((event: MouseEvent) => console.log(event))
 
 //we're repeating so we shud condition render
  /* if(items.length === 0)
@@ -33,9 +36,14 @@ function ListGroup() {
     <>
     <h1>List</h1>
     {items.length === 0 && <p>no items found</p> }
-    <ul className="list-group">
-       {items.map((item) => (
-        <li className="list-group-item" key={item} onClick={() => console.log("clicked")}>{item}</li>
+    <ul className="list-group ">
+       {items.map((item, index) => (
+         <li className= {selectedIndex === index ? 'list-group-item active' : 'list-group-item'} 
+         key={item} 
+         onClick={handleClick}
+        >
+          {item}
+          </li>
         ))}
 
     </ul>
